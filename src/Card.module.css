@@ -1,0 +1,10 @@
+.imgstyle{
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.title{
+    width: 100%;
+    text-align: center;
+}

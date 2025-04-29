@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import { Card } from './Card'
 import { Req } from './Req'
+import { Calcs } from './Calcs'
+import { Contact } from './Contact'
 
 function App() {
     const defaultPhoneNumber = "5541999999999" 

@@ -1,7 +1,7 @@
 import axios from "axios";
 
-export const apiRick = axios.create({
-  baseURL: "https://rickandmortyapi.com/api"
+export const apiDragonBall = axios.create({
+  baseURL: "https://www.dragonball-api.com/api"
 });
 
-export default apiRick;
+export default apiDragonBall;

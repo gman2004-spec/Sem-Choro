@@ -1,50 +1,49 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import React from 'react';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 import {
   createBrowserRouter,
   RouterProvider,
-} from "react-router-dom" // Corrigido: "react-router" -> "react-router-dom"
-import './index.css'
+} from 'react-router-dom';
 
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import './index.css';
 
-import App from './App.jsx'
-import Contact from './Contact.jsx'
-import Calcs from './Calcs.jsx'
-import Req from './Req.jsx'
+import App from './App.jsx';
+import Contact from './Contact.jsx';
+import Calcs from './Calcs.jsx';
+import Req from './Req.jsx';
 
-// ❌ Corrigir ou remover se você não tem esse componente
-// import { Analytics } from '@vercel/analytics/react'
-const Analytics = () => null // Corrigido para placeholder; substitua com import real se necessário
+// ✅ Placeholder temporário para o Analytics (substitua por import real, se necessário)
+const Analytics = () => null;
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
   },
   {
-    path: "/contact",
+    path: '/contact',
     element: <Contact />,
   },
   {
-    path: "/calcs",
+    path: '/calcs',
     element: <Calcs />,
   },
   {
-    path: "/requisicao",
+    path: '/requisicao',
     element: <Req />,
   },
-])
+]);
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <Analytics />
-    <RouterProvider router={router} />
-  </StrictMode>
-)
+const rootElement = document.getElementById('root');
 
-     <Analytics/>
-     <RouterProvider router={router} />
-  </StrictMode>,
-)
+if (rootElement) {
+  createRoot(rootElement).render(
+    <StrictMode>
+      <Analytics />
+      <RouterProvider router={router} />
+    </StrictMode>
+  );
+} else {
+  console.error("❌ Elemento com id 'root' não encontrado no DOM.");
+}
